@@ -3,9 +3,8 @@ var game;
 game = new Phaser.Game(960, 540, Phaser.AUTO, '');
 // First parameter is how our state will be called.
 // Second parameter is an object containing the needed methods for state functionality
-game.state.add('Menu', Menu);
 game.state.add('Game', Game);
-game.state.start('Menu');
+game.state.start('Game');
 
 var Game = {
 
@@ -14,9 +13,12 @@ var Game = {
         // In our case, that's just two squares - one for the snake body and one for the apple.
         // game.load.image('snake', './assets/images/snake.png');
         // game.load.image('apple', './assets/images/apple.png');
+        game.image.load('player', '/img/square.png');
     },
 
     create : function() {
+
+    	game.add.sprite(0,0,'player');
 
         // By setting up global variables in the create function, we initialise them on game start.
         // We need them to be globally available so that the update function can alter them.
