@@ -34,13 +34,12 @@ var Menu = {
 var Game = {
 
     preload : function() {
-        // Here we load all the needed resources for the level.
-        // In our case, that's just two squares - one for the snake body and one for the apple.
-        // game.load.image('snake', './assets/images/snake.png');
-        // game.load.image('apple', './assets/images/apple.png');
+        game.load.image('player', './img/square.png');
     },
 
     create : function() {
+
+        player = game.add.sprite('player');
 
         // By setting up global variables in the create function, we initialise them on game start.
         // We need them to be globally available so that the update function can alter them.
